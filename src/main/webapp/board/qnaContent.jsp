@@ -71,7 +71,7 @@
 										</div>
 							<div class="post-footer">
 											<span class=""><a href="#" onclick="confirmDelete(${qnaSeq})" class="button"><span>삭제</span></a></span>
-								            <span class=""><a href="#" onclick="UpdateQna(${qnaSeq})" class="button"><span>수정</span></a></span>
+								            <span class=""><a href="#" onclick="UpdateQna(${qnaSeq})" class="button" enctype="multipart/form-data"><span>수정</span></a></span>
 										</div>
 							</div>
 				

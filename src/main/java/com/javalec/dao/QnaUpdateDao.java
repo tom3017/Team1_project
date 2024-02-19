@@ -29,7 +29,7 @@ public class QnaUpdateDao {
 		
 		try {
 			connection = dataSource.getConnection();
-			String query = "update qna set bName = ?, bTitle = ?, bContent = ? where bId = ?";
+			String query = "update qna set qnaTitle = ?, qnaCategory = ?, qnaContent = ?, qnaImage = ? where qnaSeq = ?";
 			preparedStatement =connection.prepareStatement(query);
 			preparedStatement.setString(1, qnaTitle);
 			preparedStatement.setString(2, qnaCategory);

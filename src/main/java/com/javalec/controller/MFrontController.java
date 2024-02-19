@@ -21,6 +21,7 @@ import com.javalec.command.MqnaContentCommand;
 import com.javalec.command.MqnaWriteCommand;
 import com.javalec.command.ProductCommand;
 import com.javalec.command.QnaDeleteCommand;
+import com.javalec.command.QnaUpdateCommand;
 import com.javalec.command.TotalCommand;
 
 /**

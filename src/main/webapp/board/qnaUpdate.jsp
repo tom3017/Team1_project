@@ -1,22 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-// ServletContext를 사용하여 업로드 경로를 가져옴
-request.setCharacterEncoding("UTF-8");
-ServletContext context = request.getServletContext();
-String uploadPath = context.getRealPath("/images");
-%>
+<%// ServletContext를 사용하여 업로드 경로를 가져옴
+   request.setCharacterEncoding("UTF-8");
+   ServletContext context = request.getServletContext();
+   String uploadPath = context.getRealPath("/images"); 
+	%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>MakUSwag</title>
 <script type="text/javascript">
-	function insertQna() {
-		let form = document.insertQnaForm;
-		form.submit();
-		return true;
-	}
-</script>
+    function UpdateQna() {
+        let form = document.UpdateQnaForm;
+        form.submit();
+        return true;
+    }
+    </script>
 <!-- CSS -->
 <link rel="stylesheet"
 	href="//img.echosting.cafe24.com/editors/froala/3.2.2/css/froala_editor.pkgd.min.css?vs=2402071282">
@@ -35,7 +34,8 @@ String uploadPath = context.getRealPath("/images");
 	src="//img.echosting.cafe24.com/editors/froala/js/i18n/ko_KR.js?vs=2402071282"></script>
 
 <script>
-	if (FroalaEditor.PLUGINS && FroalaEditor.PLUGINS.url)
+	if (FroalaEditor.PLUGINS
+			&& FroalaEditor.PLUGINS.url)
 		delete FroalaEditor.PLUGINS.url; // ECHOSTING-518735
 </script>
 <script
@@ -68,9 +68,8 @@ String uploadPath = context.getRealPath("/images");
 							<font color="#555555">Q&A</font>
 						</h3>
 					</div>
-					<form id="boardWriteForm" name="insertQnaForm"
-						action="qnaWriteSubmit.do" method="post" target="_self"
-						enctype="multipart/form-data">
+					<form id="boardWriteForm" name="insertQnaForm" action="qnaWriteSubmit.do"
+						method="post" target="_self" enctype="multipart/form-data">
 						<input id="board_no" name="board_no" value="5" type="hidden" /> <input
 							id="product_no" name="product_no" value="0" type="hidden" /> <input
 							id="move_write_after" name="move_write_after"
@@ -102,9 +101,8 @@ String uploadPath = context.getRealPath("/images");
 												<option value="교환/반품 문의">교환/반품 문의</option>
 												<option value="상품관련 문의">상품관련 문의</option>
 												<option value="기타 문의">기타 문의</option>
-											</select><input id="subject" name="qnaTitle" value="${qnaTitle }"
-												class="inputTypeText" placeholder="제목을 입력하세요"
-												maxLength="125" type="text" />
+											</select><input id="subject" name="qnaTitle" value = "${qnaTitle }" class="inputTypeText"
+												placeholder="제목을 입력하세요" maxLength="125" type="text" />
 											<div class="checkbox"></div>
 											<div class="checkbox"></div>
 										</div>
@@ -130,15 +128,14 @@ String uploadPath = context.getRealPath("/images");
 											</script>
 										</div>
 										<div class="field-label">첨부파일</div>
-										<input name="qnaImage" type="file" value="qnaImage">
+										<input name="qnaImage" type="file" value = "qnaImage">
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="form-action">
-							<input type="submit" class="button primary-button" value="SUBMIT"
-								name="qnaInsert" onclick="insertQna()">
-						</div>
+					<div class="form-action">
+						<input type="submit" class="button primary-button" value ="SUBMIT" name = "qnaUpdate" onclick = "UpdateQna()" enctype="multipart/form-data">
+					</div>
 					</form>
 				</div>
 				<!-- 여기까지 Swag~ -->
